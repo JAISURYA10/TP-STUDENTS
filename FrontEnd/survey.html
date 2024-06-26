@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Satisfaction Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for search bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+            padding: 10px;
+            position: relative;
+        }
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-right: 20px; /* Adjust margin */
+            font-size: 14px; /* Adjust font size */
+            width: 130px; /* Adjust width */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Vertical Side Navigation Bar -->
+        <nav class="side-nav">
+            <ul>
+                <li><a href="#" id="feedbackLink">Feedback</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="topnav">
+                <input type="text" placeholder="Search.." id="searchInput">
+                <button onclick="toggleTheme()">Change Theme</button>
+                <button onclick="toggleSurveyForm()">Add Feedback</button>
+            </div>
+            <div class="survey-container hidden"> <!-- Initially hidden -->
+                <h2>Student Satisfaction Survey</h2>
+                <form id="surveyForm">
+                    <!-- Survey questions will be dynamically added here -->
+                    <div class="question">
+                        <label for="q1">Question 1:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q2">Question 2:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 3:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 4:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 5:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 6:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 7:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 8:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 9:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 10:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 11:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 12:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 13:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 14:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="q1">Question 15:</label>
+                        <div class="stars" data-rating="0">
+                            <span class="star" data-value="1">&#9734;</span>
+                            <span class="star" data-value="2">&#9734;</span>
+                            <span class="star" data-value="3">&#9734;</span>
+                            <span class="star" data-value="4">&#9734;</span>
+                            <span class="star" data-value="5">&#9734;</span>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="summary-container"> <!-- Initially visible -->
+                <h2>Summary</h2>
+                <p>This is the summary of the feedback.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const surveyContainer = document.querySelector('.survey-container');
+            const summaryContainer = document.querySelector('.summary-container');
+            const addFeedbackButton = document.querySelector('#feedbackLink');
+
+            addFeedbackButton.addEventListener('click', function() {
+                surveyContainer.classList.remove('hidden');
+                summaryContainer.classList.add('hidden');
+            });
+
+            const surveyForm = document.getElementById('surveyForm');
+            if (surveyForm) {
+                surveyForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const starsContainers = document.querySelectorAll('.stars');
+                    let allQuestionsAnswered = true;
+
+                    starsContainers.forEach(starsContainer => {
+                        if (starsContainer.dataset.rating === '0') {
+                            allQuestionsAnswered = false;
+                            return;
+                        }
+                    });
+
+                    if (allQuestionsAnswered) {
+                        console.log('Submitting survey...');
+                        console.log('Survey Submitted...');
+                        surveyContainer.classList.add('hidden');
+                        summaryContainer.classList.remove('hidden');
+                    } else {
+                        alert('Please answer all questions before submitting.');
+                    }
+                });
+            }
+        });
+
+        function toggleSurveyForm() {
+            const surveyContainer = document.querySelector('.survey-container');
+            const summaryContainer = document.querySelector('.summary-container');
+            surveyContainer.classList.remove('hidden');
+            summaryContainer.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
